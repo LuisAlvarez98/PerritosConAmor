@@ -18,6 +18,15 @@
 </head>
 
   <body>
-    <h1>hola</h1>
+    <form>
+  		<header>Login</header>
+  		<label>Username <span>*</span></label>
+  		<input/>
+  		<div class="help">At least 6 character</div>
+  		<label>Password <span>*</span></label>
+  		<input/>
+  		<div class="help">Use upper and lowercase lettes as well</div>
+  		<button>Login</button>
+	</form>
   </body>
 </html>
