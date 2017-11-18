@@ -9,7 +9,7 @@
 
   <script src="https://use.fontawesome.com/976e5e17b3.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/main.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 </head>
@@ -21,7 +21,7 @@
     <div class="nav-wrapper">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="black-text" id="button-personal">Login</a></li>
+        <li><a class="black-text modal-trigger" href="#modal1">Login</a></li>
         <li><a class="black-text"  id="button-academic">Register</a></li>
         <li><a class="black-text"  id="button-projects">About us</a></li>
       </ul>
@@ -52,11 +52,71 @@
       </form>
       </div>
    </div>
+   <div class="row">
+     <div class="col s3">
+       <div class="block"></div>
+     </div>
+     <div class="col s3">
+       <div class="block"></div>
+     </div>
+     <div class="col s3">
+       <div class="block"></div>
+     </div>
+     <div class="col s3">
+       <div class="block"></div>
+     </div>
+     <div class="col s3">
+       <div class="block"></div>
+     </div>
+     <div class="col s3">
+       <div class="block"></div>
+     </div>
+     <div class="col s3">
+       <div class="block"></div>
+     </div>
+     <div class="col s3">
+       <div class="block"></div>
+     </div>
+   </div>
+
+
+
   </body>
 </html>
-<script>
-$( document ).ready(function() {
-   $('.parallax').parallax();
-   $(".button-collapse").sideNav();
-});
-</script>
+
+  <!-- Modal Trigger -->
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Colaborator Form</h4>
+      <p>Mozilla Campus Club Monterrey</p>
+      <form action="login.php" method="post">
+        <div class="row">
+
+          <div class="input-field col s12">
+            <input name="name" id="name" type="text" class="validate">
+            <label for="name">Name</label>
+          </div>
+            <div class="col s12">  <label class="red-text val_name">Please input name</label></div>
+
+          <div class="input-field col s12">
+            <input name="email" id="email" type="text" class="validate">
+            <label for="email">Email</label>
+          </div>
+          <div class="col s12">  <label class="red-text val_email">Please input email</label></div>
+
+          <div class="input-field col s12">
+            <textarea name="message" id="message" class="materialize-textarea"></textarea>
+            <label for="message">Message</label>
+          </div>
+
+          <div class="col s12">
+            <button id ="colaborator"class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
