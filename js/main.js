@@ -4,10 +4,10 @@ $( document ).ready(function() {
     $(".button-collapse").sideNav();
     $('.modal').modal();
 
-    $('.search').function({
-      
+  var delay = 0;
+  $( "#search-btn" ).click(function() {
+    $(".block").removeClass('hide').fadeIn("slow",function(){
 
-
-    });
-
+     });
+  });
 });

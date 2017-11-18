@@ -45,7 +45,7 @@
                <input id="icon_prefix" type="text" class="validate  browser-default">
              </div>
               <div class= "col s6">
-                <a class="waves-effect waves-light btn search-btn btn-small margin-left-s">Search</a>
+                <a class="waves-effect waves-light btn search-btn btn-small margin-left-s" id="search-btn">Search</a>
               </div>
             </div>
           </div>
@@ -54,28 +54,28 @@
    </div>
    <div class="row">
      <div class="col s3">
-       <div class="block"></div>
+       <div class="block hide"></div>
      </div>
      <div class="col s3">
-       <div class="block"></div>
+       <div class="block hide"></div>
      </div>
      <div class="col s3">
-       <div class="block"></div>
+       <div class="block hide"></div>
      </div>
      <div class="col s3">
-       <div class="block"></div>
+       <div class="block hide"></div>
      </div>
      <div class="col s3">
-       <div class="block"></div>
+       <div class="block hide"></div>
      </div>
      <div class="col s3">
-       <div class="block"></div>
+       <div class="block hide"></div>
      </div>
      <div class="col s3">
-       <div class="block"></div>
+       <div class="block hide"></div>
      </div>
      <div class="col s3">
-       <div class="block"></div>
+       <div class="block hide"></div>
      </div>
    </div>
 
@@ -89,31 +89,23 @@
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4>Colaborator Form</h4>
-      <p>Mozilla Campus Club Monterrey</p>
+      <h4>Login</h4>
+
       <form action="login.php" method="post">
         <div class="row">
 
           <div class="input-field col s12">
             <input name="name" id="name" type="text" class="validate">
-            <label for="name">Name</label>
+            <label for="name">Email</label>
           </div>
-            <div class="col s12">  <label class="red-text val_name">Please input name</label></div>
 
           <div class="input-field col s12">
             <input name="email" id="email" type="text" class="validate">
-            <label for="email">Email</label>
-          </div>
-          <div class="col s12">  <label class="red-text val_email">Please input email</label></div>
-
-          <div class="input-field col s12">
-            <textarea name="message" id="message" class="materialize-textarea"></textarea>
-            <label for="message">Message</label>
+            <label for="email">Password</label>
           </div>
 
           <div class="col s12">
             <button id ="colaborator"class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
             </button>
           </div>
         </div>
