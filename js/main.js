@@ -6,8 +6,9 @@ $( document ).ready(function() {
 
   var delay = 0;
   $( "#search-btn" ).click(function() {
-    $(".block").removeClass('hide').fadeIn("slow",function(){
-
-     });
+    $( ".block" ).each(function(index) {
+      $(this).delay(delay).fadeIn("slow");
+       delay += 400;
+    });
   });
 });

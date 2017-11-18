@@ -54,28 +54,28 @@
    </div>
    <div class="row">
      <div class="col s3">
-       <div class="block hide"></div>
+       <div class="block ds-non"></div>
      </div>
      <div class="col s3">
-       <div class="block hide"></div>
+       <div class="block ds-non"></div>
      </div>
      <div class="col s3">
-       <div class="block hide"></div>
+       <div class="block ds-non"></div>
      </div>
      <div class="col s3">
-       <div class="block hide"></div>
+       <div class="block ds-non"></div>
      </div>
      <div class="col s3">
-       <div class="block hide"></div>
+       <div class="block ds-non"></div>
      </div>
      <div class="col s3">
-       <div class="block hide"></div>
+       <div class="block ds-non"></div>
      </div>
      <div class="col s3">
-       <div class="block hide"></div>
+       <div class="block ds-non"></div>
      </div>
      <div class="col s3">
-       <div class="block hide"></div>
+       <div class="block ds-non"></div>
      </div>
    </div>
 

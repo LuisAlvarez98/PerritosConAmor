@@ -29,6 +29,6 @@
   background-image: url('../img/dog5.jpg');
   background-size:cover;
 }
-.hide{
-  display:none;
+.ds-non{
+  display: none;
 }
