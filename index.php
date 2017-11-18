@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<?php include'views/header.php'; ?>
     <title>Perritos con amor</title>
   </head>
 
