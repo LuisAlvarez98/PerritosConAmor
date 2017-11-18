@@ -78,9 +78,6 @@
        <div class="block ds-non"></div>
      </div>
    </div>
-
-
-
   </body>
 </html>
 
