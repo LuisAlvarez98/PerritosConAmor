@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="estilos.css">
 
   <script src="https://use.fontawesome.com/976e5e17b3.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
