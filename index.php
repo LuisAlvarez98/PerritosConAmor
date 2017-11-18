@@ -21,8 +21,8 @@
     <div class="nav-wrapper">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="black-text modal-trigger" href="#modal1">Login</a></li>
-        <li><a class="black-text"  id="button-academic">Register</a></li>
+        <li><a class="black-text modal-trigger" href="#login">Login</a></li>
+        <li><a class="black-text modal-trigger" href="#register">Register</a></li>
         <li><a class="black-text"  id="button-projects">About us</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
@@ -84,7 +84,7 @@
   <!-- Modal Trigger -->
 
   <!-- Modal Structure -->
-  <div id="modal1" class="modal">
+  <div id="login" class="modal">
     <div class="modal-content">
       <h4>Login</h4>
 
@@ -101,6 +101,33 @@
             <label for="email">Password</label>
           </div>
 
+          <div class="col s12">
+            <button id ="colaborator"class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="register" class="modal">
+    <div class="modal-content">
+      <h4>Register</h4>
+
+      <form action="register.php" method="post">
+        <div class="row">
+
+          <div class="input-field col s12">
+            <input name="name" id="name" type="text" class="validate">
+            <label for="name">Name</label>
+          </div>
+          <div class="input-field col s12">
+            <input name="email" id="email" type="text" class="validate">
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field col s12">
+            <input name="password" id="password" type="text" class="validate">
+            <label for="password">Password</label>
+          </div>
           <div class="col s12">
             <button id ="colaborator"class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit
             </button>
