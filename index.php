@@ -13,8 +13,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 </head>
-
-  </head>
   <body>
     <!--navbar -->
     <nav class="z-depth-0 white">
@@ -37,51 +35,79 @@
     <div class="parallax-container">
        <div class="parallax"><img src="img/bg.jpg"></div>
        <div class="row">
-
-   <form class="col s12">
-     <div class="row center-input">
-           <div class="input-field col s12">
-             <div class= "col s6">
-               <input id="icon_prefix" type="text" class="validate  browser-default">
+         <form action="index.php" method="post">
+           <div class="row  center-input">
+             <div class="input-field col s12">
+               <input name="zip-code" id="zip-code" type="text" class="validate browser-default">
+               <label for="zip-code">Zip</label>
              </div>
-              <div class= "col s6">
-                <a class="waves-effect waves-light btn search-btn btn-small margin-left-s" id="search-btn">Search</a>
-              </div>
-            </div>
-          </div>
-      </form>
+             <div class="col s6">
+               <button id ="search-btn" class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit
+               </button>
+             </div>
+           </div>
+         </form>
       </div>
    </div>
-   <div class="row">
-     <div class="col s3">
-       <div class="block ds-non"></div>
-     </div>
-     <div class="col s3">
-       <div class="block ds-non"></div>
-     </div>
-     <div class="col s3">
-       <div class="block ds-non"></div>
-     </div>
-     <div class="col s3">
-       <div class="block ds-non"></div>
-     </div>
-     <div class="col s3">
-       <div class="block ds-non"></div>
-     </div>
-     <div class="col s3">
-       <div class="block ds-non"></div>
-     </div>
-     <div class="col s3">
-       <div class="block ds-non"></div>
-     </div>
-     <div class="col s3">
-       <div class="block ds-non"></div>
-     </div>
+   <div class="row dogs">
+     <script>
+     var delay = 0;
+     $( "#search-btn" ).click(function() {
+       $( ".block" ).each(function(index) {
+         $(this).delay(delay).fadeIn("slow");
+          delay += 400;
+       });
+     });
+
+     </script>
+     <?php
+     error_reporting(0);
+     $servername = "localhost";
+     $username = "root";
+     $password = "";
+     $db = "perritos";
+
+
+
+     $con = mysqli_connect($servername, $username, $password, $db);
+
+     // Check connection
+     if (mysqli_connect_errno())
+       {
+       echo "Failed to connect to MySQL: " . mysqli_connect_error();
+     }
+
+
+     $sql = "SELECT name, zipcode, pp FROM pets";
+     $result = $con->query($sql);
+     if ($result->num_rows > 0) {
+         // output data of each row
+         while($row = $result->fetch_assoc()) {
+             if($_POST['zip-code'] == $row["zipcode"]){
+               echo '<script>
+                $(".block").css("background-image",url("../img/dog5.jpg"));
+                </script>
+               <div class="col s3">
+               <div class="block"></div>
+               </div>';
+             }
+         }
+     } else {
+         echo "0 results";
+     }
+
+     $con->close();
+     ?>
+
    </div>
+
+
   </body>
 </html>
 
+
   <!-- Modal Trigger -->
+
 
   <!-- Modal Structure -->
   <div id="login" class="modal">
@@ -102,7 +128,7 @@
           </div>
 
           <div class="col s12">
-            <button id ="colaborator"class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit
+            <button id ="search-btn"class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit
             </button>
           </div>
         </div>
