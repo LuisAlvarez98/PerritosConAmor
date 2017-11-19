@@ -28,7 +28,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
     <nav class="z-depth-0 white">
     <div class="nav-wrapper">
         <a href="index.php" class="brand-logo center">Perros Calientes</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i style="font-size:20px" class="fa fa-bars white-text"></i></a>
       <ul class="right hide-on-med-and-down">
       <?php
       if(isset($_SESSION['email'])):  ?>
@@ -50,24 +50,19 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
   </nav>
   <!--Content-->
   <div class="row">
-    <div class="col s4">
+    <div class="col m4"></div>
+    <div class="col s12 m4">
       <div class="card small center">
         <h5>Personal Information: </h5>
             <h4><?php echo $_SESSION['name']; ?></h4>
             <h5><?php echo $_SESSION['email']; ?></h5>
+            <h4>Pet: <a class="btn modal-trigger" href="#add-pet"><i class="fa fa-plus" aria-hidden="true"></i></a> </h4>
+            <h5>Likes:  </h5>
       </div>
     </div>
-    <div class="col s4">
-      <div class="card small center">
-        <h5>Pet: </h5>
-        <a class="btn-floating btn-large waves-effect waves-light red right margin-right-m modal-trigger" href="#add-pet"><i class="material-icons">add</i></a>
-      </div>
-    </div>
-    <div class="col s4">
-      <div class="card small center">
-          <h5>Likes:  </h5>
-      </div>
-    </div>
+    <div class="col m4"></div>
+
+
 
   </div>
 

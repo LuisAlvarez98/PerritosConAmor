@@ -29,7 +29,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
     <nav class="z-depth-0 white">
     <div class="nav-wrapper">
       <a href="index.php" class="brand-logo center">Perros Calientes</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i style="font-size:20px" class="fa fa-bars white-text"></i></a>
       <ul class="right hide-on-med-and-down">
       <?php
       if(isset($_SESSION['email'])):  ?>
@@ -95,7 +95,8 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
          while($row = $result->fetch_assoc()) {
              if($_POST['zip-code'] == $row["zipcode"]){
                echo '
-               <div class="col s3">
+
+               <div class="col s12 m3">
                <div style="background-image:url('.$row['pp'].')"class="block z-depth-3 ds-non ">
                <div class="overlay">
                   <div class="col s12">
@@ -108,7 +109,9 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
                   </div>
                </div>
                </div>
-               </div>';
+               </div>
+               ';
+
              }
          }
      } else {
@@ -207,6 +210,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
   </div>
   <script>
   var delay = 0;
+  var flag;
     $( ".block" ).each(function(index) {
       $(this).delay(delay).fadeIn("slow");
        delay += 400;
@@ -215,5 +219,22 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
   $(".action-heart").on("click", function(){
     $(".answer1").toggle(300);
     $(this).find($(".fa")).toggleClass('fa-heart-o').toggleClass('fa-heart');
+      if($(".fa").hasClass("fa-heart")){
+        $("#perro").modal('open');
+      }else{
+        $("#perro").modal('close');
+      }
 });
   </script>
+  <div id="perro" class="modal">
+  <div class="modal-content">
+    <h4>More info</h4>
+    <div class="row">
+      <div class="col s6"><h5 class="flow-text">Owner: <?php echo $_SESSION['name']; ?></h5></div>
+      <div class="col s6"><h5 class="flow-text">Contact: <a href="mailto:'.<?php echo $_SESSION['email']; ?>.'"><?php echo $_SESSION['email']; ?></a> </h5></div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
