@@ -3,6 +3,5 @@
    unset($_SESSION["username"]);
    unset($_SESSION["password"]);
    session_destroy();
-   echo 'You have cleaned session';
    header('Refresh: 2; URL = index.php');
 ?>
