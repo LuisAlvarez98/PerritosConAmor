@@ -15,6 +15,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <script src="https://use.fontawesome.com/976e5e17b3.js"></script>
@@ -27,7 +28,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
     <!--navbar -->
     <nav class="z-depth-0 white">
     <div class="nav-wrapper">
-      <a href="index.php" class="brand-logo center">Logo</a>
+      <a href="index.php" class="brand-logo center">Perros Calientes</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
       <?php
@@ -112,7 +113,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
                   </div>
                   <div class="col s12">
                   <a class ="action-heart">
-                    <i class="fa fa-heart-o text heart" aria-hidden="true"></i>
+                    <i class="fa fa-heart-o text heart"></i>
                   </a>
                   </div>
                </div>
@@ -214,3 +215,9 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
       </form>
     </div>
   </div>
+  <script>
+  $(".action-heart").on("click", function(){
+    $(".answer1").toggle(300);
+    $(this).find($(".fa")).toggleClass('fa-heart-o').toggleClass('fa-heart');
+});
+  </script>
