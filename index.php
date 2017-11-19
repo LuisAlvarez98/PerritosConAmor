@@ -84,11 +84,9 @@
          // output data of each row
          while($row = $result->fetch_assoc()) {
              if($_POST['zip-code'] == $row["zipcode"]){
-               echo '<script>
-                $(".block").css("background-image",url("../img/dog5.jpg"));
-                </script>
+               echo '
                <div class="col s3">
-               <div class="block"></div>
+               <div style="background-image:url('.$row['pp'].')"class="block"></div>
                </div>';
              }
          }

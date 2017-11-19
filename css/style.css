@@ -26,8 +26,8 @@
   height:200px;
   margin: auto;
   margin-top: 20px!important;
-  background-image: url('../img/dog5.jpg');
   background-size:cover;
+
 }
 .ds-non{
   display: none;
