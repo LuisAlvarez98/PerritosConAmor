@@ -19,9 +19,9 @@
     <div class="nav-wrapper">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="black-text modal-trigger" href="#login">Login</a></li>
-        <li><a class="black-text modal-trigger" href="#register">Register</a></li>
-        <li><a class="black-text"  id="button-projects">About us</a></li>
+        <li><a class="modal-trigger white-text" href="#login">Login</a></li>
+        <li><a class="modal-trigger  white-text" href="#register">Register</a></li>
+        <li><a class="white-text"  id="button-projects">About us</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a id="button-personal">Login</a></li>
@@ -38,13 +38,14 @@
          <form action="index.php" method="post">
            <div class="row  center-input">
              <div class="input-field col s12">
-               <input name="zip-code" id="zip-code" type="text" class="validate browser-default">
-               <label for="zip-code">Zip</label>
-             </div>
+               <div class="col s6">
+                 <input placeholder="Zipcode" name="zip-code" id="zip-code" type="text" class="validate browser-default">
+               </div>
+
              <div class="col s6">
-               <button id ="search-btn" class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit
-               </button>
+               <button id ="search-btn" class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit</button>
              </div>
+           </div>
            </div>
          </form>
       </div>
@@ -86,7 +87,12 @@
              if($_POST['zip-code'] == $row["zipcode"]){
                echo '
                <div class="col s3">
-               <div style="background-image:url('.$row['pp'].')"class="block"></div>
+               <div style="background-image:url('.$row['pp'].')"class="block z-depth-3">
+               <div class="overlay">
+                  <div class="text">'.$row['name'].'</div>
+               </div>
+
+               </div>
                </div>';
              }
          }
