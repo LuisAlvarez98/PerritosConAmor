@@ -62,7 +62,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
                </div>
 
              <div class="col s6">
-               <button id ="search-btn" class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit</button>
+               <button id ="search-btn" class="btn modal-btn waves-effect waves-light"  name="action" >Submit</button>
              </div>
            </div>
            </div>
@@ -71,6 +71,8 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
    </div>
    <div class="row dogs">
      <?php
+
+
      error_reporting(0);
      $servername = "localhost";
      $username = "root";
@@ -86,8 +88,6 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
        {
        echo "Failed to connect to MySQL: " . mysqli_connect_error();
      }
-
-
      $sql = "SELECT name, zipcode, pp FROM pets";
      $result = $con->query($sql);
      if ($result->num_rows > 0) {
