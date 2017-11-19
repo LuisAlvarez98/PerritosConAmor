@@ -42,9 +42,15 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
         <li><a class="white-text"  id="button-projects">About us</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a id="button-personal">Login</a></li>
-        <li><a id="button-academic">Register</a></li>
-        <li><a id="button-projects">About us</a></li>
+        <?php
+        if(isset($_SESSION['email'])):  ?>
+        <li><a class="modal-trigger black-text" href="logout.php">Logout</a></li>
+          <li><a class="modal-trigger  black-text" href="account.php">Account</a></li>
+          <?php else: ?>
+            <li><a class="modal-trigger black-text" href="#login">Login</a></li>
+            <li><a class="modal-trigger  black-text" href="#register">Register</a></li>
+          <?php endif; ?>
+          <li><a class="white-text"  id="button-projects">About us</a></li>
       </ul>
     </div>
   </nav>
