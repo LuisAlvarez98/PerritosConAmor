@@ -92,13 +92,13 @@
         <div class="row">
 
           <div class="input-field col s12">
-            <input name="name" id="name" type="text" class="validate">
-            <label for="name">Email</label>
+            <input name="email" id="email" type="text" class="validate">
+            <label for="email">Email</label>
           </div>
 
           <div class="input-field col s12">
-            <input name="email" id="email" type="text" class="validate">
-            <label for="email">Password</label>
+            <input name="password" id="password" type="password" class="validate">
+            <label for="password">Password</label>
           </div>
 
           <div class="col s12">
@@ -125,7 +125,7 @@
             <label for="email">Email</label>
           </div>
           <div class="input-field col s12">
-            <input name="password" id="password" type="text" class="validate">
+            <input name="password" id="password" type="password" class="validate">
             <label for="password">Password</label>
           </div>
           <div class="col s12">

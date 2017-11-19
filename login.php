@@ -13,21 +13,6 @@ if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-
-  $name = $_POST['email'];
-  $email = $_POST['password'];
-
-
-    $sql = "SELECT FROM perritos (email, password)";
-
-     if ($con->query($sql) === TRUE) {
-         echo "New record created successfully";
-         header("Location: index.php");
-     } else {
-         echo "Error: " . $sql . "<br>" . $con->error;
-     }
-
-  }
-
+ header("Location: index.php");
 $con->close();
 ?>

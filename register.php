@@ -29,7 +29,9 @@ if (mysqli_connect_errno())
        echo "Error: " . $sql . "<br>" . $con->error;
    }
 
-
+   $_POST['name'] = ' ';
+   $_POST['email'] = ' ';
+   $_POST['password'] = ' ';
 
 $con->close();
 ?>
