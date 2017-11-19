@@ -5,7 +5,6 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
      session_unset();     // unset $_SESSION variable for the run-time
      session_destroy();   // destroy session data in storage
 }
-
  ?>
 <html>
 <head>
@@ -14,6 +13,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <script src="https://use.fontawesome.com/976e5e17b3.js"></script>
@@ -26,6 +26,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
     <!--navbar -->
     <nav class="z-depth-0 white">
     <div class="nav-wrapper">
+        <a href="index.php" class="brand-logo center">Logo</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
       <?php
@@ -48,20 +49,22 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
   </nav>
   <!--Content-->
   <div class="row">
-    <div class="col s6">
-      <div class="card small">
-        hola: <?php echo $_SESSION['name']; ?>
+    <div class="col s4">
+      <div class="card small center">
+        <h5>Personal Information: </h5>
+            <h4><?php echo $_SESSION['name']; ?></h4>
+            <h5><?php echo $_SESSION['email']; ?></h5>
       </div>
     </div>
-    <div class="col s6">
-      <div class="card small">
-        hola: <?php echo $_SESSION['name']; ?>
-        <?php echo $_SESSION['email']; ?>
+    <div class="col s4">
+      <div class="card small center">
+        <h5>Pet: </h5>
+        <a class="btn-floating btn-large waves-effect waves-light red right margin-right-m modal-trigger" href="#add-pet"><i class="material-icons">add</i></a>
       </div>
     </div>
-    <div class="col s12">
-      <div class="card small">
-        hola: <?php echo $_SESSION['name']; ?>
+    <div class="col s4">
+      <div class="card small center">
+          <h5>Likes:  </h5>
       </div>
     </div>
 
@@ -69,3 +72,40 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
 
   </body>
 </html>
+
+<div id="add-pet" class="modal">
+  <div class="modal-content">
+    <h4>Add pet</h4>
+    <form action="add_pet.php" method="post">
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="name_pet" id="name_pet" type="text" class="validate">
+          <label for="name_pet">Name</label>
+        </div>
+        <div class="input-field col s12">
+          <input name="zip-code" id="email" type="text" class="validate">
+          <label for="zip-code">Zipcode</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input name="pp" id="pp" type="text" class="validate">
+          <label for="pp">Photo</label>
+        </div>
+
+        <div class="input-field col s6">
+          <input name="sex" id="sex" type="text" class="validate">
+          <label for="sex">Sex</label>
+        </div>
+        <div class="input-field col s6">
+            <input name="race" id="race" type="text" class="validate">
+              <label for="race">Race</label>
+          </div>
+
+
+        <div class="col s12">
+          <button class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

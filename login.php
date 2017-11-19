@@ -20,6 +20,7 @@ $row  = mysqli_fetch_array($result);
 if(is_array($row)) {
 	$_SESSION["email"] = $row['email'];
   $_SESSION["name"] = $row['name'];
+  $_SESSION["pet_id"] = $row['pet_id'];
    header("Location: index.php");
 	} else {
 	echo "no";

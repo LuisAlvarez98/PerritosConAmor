@@ -18,9 +18,9 @@ body{
    transform: translate(-50%, -50%)
  }
 .center-input input{
-  height:75px;
-  width: 600px;
-  font-size: 50px;
+  height:40px;
+  width: 300px;
+  font-size: 20px;
 }
 .margin-left-s{
   margin-left: 20px;
@@ -41,9 +41,9 @@ body{
   display: none;
 }
 #search-btn{
-  margin-left: 150px;
-  height: 75px;
-  font-size: 50px;
+  margin-left: 70px;
+  height: 40px;
+  font-size: 10px;
 }
 .block {
   position: relative;
@@ -71,7 +71,9 @@ body{
 .block:hover .overlay {
   opacity: 1;
 }
-
+.margin-right-m{
+  margin-right: 10px;
+}
 .text {
   color: white;
   font-size: 20px;
