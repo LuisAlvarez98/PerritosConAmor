@@ -70,16 +70,6 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
       </div>
    </div>
    <div class="row dogs">
-     <script>
-     var delay = 0;
-     $( "#search-btn" ).click(function() {
-       $( ".block" ).each(function(index) {
-         $(this).delay(delay).fadeIn("slow");
-          delay += 400;
-       });
-     });
-
-     </script>
      <?php
      error_reporting(0);
      $servername = "localhost";
@@ -106,7 +96,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
              if($_POST['zip-code'] == $row["zipcode"]){
                echo '
                <div class="col s3">
-               <div style="background-image:url('.$row['pp'].')"class="block z-depth-3">
+               <div style="background-image:url('.$row['pp'].')"class="block z-depth-3 ds-non ">
                <div class="overlay">
                   <div class="col s12">
                   <div class="text">'.$row['name'].'</div>
@@ -216,6 +206,12 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
     </div>
   </div>
   <script>
+  var delay = 0;
+    $( ".block" ).each(function(index) {
+      $(this).delay(delay).fadeIn("slow");
+       delay += 400;
+    });
+
   $(".action-heart").on("click", function(){
     $(".answer1").toggle(300);
     $(this).find($(".fa")).toggleClass('fa-heart-o').toggleClass('fa-heart');
