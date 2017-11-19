@@ -1,6 +1,11 @@
 <?php
 session_start();
-session_destroy();
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+     // last request was more than 30 minutes ago
+     session_unset();     // unset $_SESSION variable for the run-time
+     session_destroy();   // destroy session data in storage
+}
+
  ?>
 <html>
 <head>
@@ -26,10 +31,12 @@ session_destroy();
       <?php
       if(isset($_SESSION['email'])):  ?>
       <li><a class="modal-trigger white-text" href="logout.php">Logout</a></li>
+        <li><a class="modal-trigger  white-text" href="account.php">Account</a></li>
     <?php else: ?>
       <li><a class="modal-trigger white-text" href="#login">Login</a></li>
+      <li><a class="modal-trigger  white-text" href="#register">Register</a></li>
     <?php endif; ?>
-        <li><a class="modal-trigger  white-text" href="#register">Register</a></li>
+
         <li><a class="white-text"  id="button-projects">About us</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
@@ -99,7 +106,9 @@ session_destroy();
                <div style="background-image:url('.$row['pp'].')"class="block z-depth-3">
                <div class="overlay">
                   <div class="text">'.$row['name'].'</div>
-                  <i class="fa fa-heart-o text heart" aria-hidden="true"></i>
+                  <a class ="action-heart">
+                    <i class="fa fa-heart-o text heart" aria-hidden="true"></i>
+                  </a>
                </div>
 
                </div>
@@ -109,7 +118,6 @@ session_destroy();
      } else {
          echo "0 results";
      }
-
      $con->close();
      ?>
 
