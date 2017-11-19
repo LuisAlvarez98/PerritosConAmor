@@ -19,6 +19,7 @@ $result = mysqli_query($con,"SELECT * FROM users WHERE email='" . $_POST["email"
 $row  = mysqli_fetch_array($result);
 if(is_array($row)) {
 	$_SESSION["email"] = $row['email'];
+  $_SESSION["name"] = $row['name'];
    header("Location: index.php");
 	} else {
 	echo "no";

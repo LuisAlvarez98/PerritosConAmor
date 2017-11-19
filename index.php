@@ -32,10 +32,10 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
       if(isset($_SESSION['email'])):  ?>
       <li><a class="modal-trigger white-text" href="logout.php">Logout</a></li>
         <li><a class="modal-trigger  white-text" href="account.php">Account</a></li>
-    <?php else: ?>
-      <li><a class="modal-trigger white-text" href="#login">Login</a></li>
-      <li><a class="modal-trigger  white-text" href="#register">Register</a></li>
-    <?php endif; ?>
+        <?php else: ?>
+          <li><a class="modal-trigger white-text" href="#login">Login</a></li>
+          <li><a class="modal-trigger  white-text" href="#register">Register</a></li>
+        <?php endif; ?>
 
         <li><a class="white-text"  id="button-projects">About us</a></li>
       </ul>
@@ -158,6 +158,33 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
   <div id="register" class="modal">
     <div class="modal-content">
       <h4>Register</h4>
+
+      <form action="register.php" method="post">
+        <div class="row">
+
+          <div class="input-field col s12">
+            <input name="name" id="name" type="text" class="validate">
+            <label for="name">Name</label>
+          </div>
+          <div class="input-field col s12">
+            <input name="email" id="email" type="text" class="validate">
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field col s12">
+            <input name="password" id="password" type="password" class="validate">
+            <label for="password">Password</label>
+          </div>
+          <div class="col s12">
+            <button id ="colaborator"class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="account" class="modal">
+    <div class="modal-content">
+      <h4>Account</h4>
 
       <form action="register.php" method="post">
         <div class="row">
