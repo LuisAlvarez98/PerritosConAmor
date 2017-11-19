@@ -90,6 +90,7 @@
                <div style="background-image:url('.$row['pp'].')"class="block z-depth-3">
                <div class="overlay">
                   <div class="text">'.$row['name'].'</div>
+                  <i class="fa fa-heart-o text heart" aria-hidden="true"></i>
                </div>
 
                </div>
