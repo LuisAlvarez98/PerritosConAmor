@@ -1,3 +1,7 @@
+<?php
+session_start();
+session_destroy();
+ ?>
 <html>
 <head>
   <title>Perritos</title>
@@ -19,7 +23,12 @@
     <div class="nav-wrapper">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="modal-trigger white-text" href="#login">Login</a></li>
+      <?php
+      if(isset($_SESSION['email'])):  ?>
+      <li><a class="modal-trigger white-text" href="logout.php">Logout</a></li>
+    <?php else: ?>
+      <li><a class="modal-trigger white-text" href="#login">Login</a></li>
+    <?php endif; ?>
         <li><a class="modal-trigger  white-text" href="#register">Register</a></li>
         <li><a class="white-text"  id="button-projects">About us</a></li>
       </ul>
@@ -118,7 +127,6 @@
   <div id="login" class="modal">
     <div class="modal-content">
       <h4>Login</h4>
-
       <form action="login.php" method="post">
         <div class="row">
 
@@ -133,13 +141,12 @@
           </div>
 
           <div class="col s12">
-            <button id ="search-btn"class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit
-            </button>
+            <button class="btn modal-btn waves-effect waves-light" type="submit" name="action">Submit</button>
           </div>
         </div>
       </form>
     </div>
-  </div>
+</div>
   <div id="register" class="modal">
     <div class="modal-content">
       <h4>Register</h4>

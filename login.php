@@ -13,6 +13,17 @@ if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
- header("Location: index.php");
+session_start();
+if(!empty($_POST['email'] && !empty($_POST['password']))){
+$result = mysqli_query($con,"SELECT * FROM users WHERE email='" . $_POST["email"] . "' and password = '". $_POST["password"]."'");
+$row  = mysqli_fetch_array($result);
+if(is_array($row)) {
+	$_SESSION["email"] = $row['email'];
+   header("Location: index.php");
+	} else {
+	echo "no";
+	}
+}
+
 $con->close();
 ?>
